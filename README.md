@@ -1,6 +1,6 @@
 # Hairry Blossom by Naturo Herbal Care
 
-A lightweight, responsive eCommerce website for a natural Ayurvedic hair care brand.
+A lightweight, responsive eCommerce website for a Natural Ayurvedic hair care brand.
 
 ## Pages
 
