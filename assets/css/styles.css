@@ -1,21 +1,22 @@
 :root {
-  --leaf: #285f43;
-  --leaf-deep: #1f4533;
-  --leaf-soft: #7f9b59;
-  --earth: #765437;
-  --clay: #ad7048;
-  --gold: #c89b48;
-  --cream: #fbf6eb;
-  --sand: #eadcbc;
-  --mist: #f5efe2;
+  --leaf: #006b49;
+  --leaf-deep: #063f2e;
+  --leaf-soft: #6f9f59;
+  --earth: #67452f;
+  --clay: #f07818;
+  --gold: #d8a742;
+  --cream: #fffdf8;
+  --titlebar: #fbf7ee;
+  --sand: #ead9b8;
+  --mist: #fff9f1;
   --paper: #fffdf7;
-  --ink: #1e281f;
-  --muted: #657064;
-  --line: rgba(45, 69, 49, 0.16);
-  --shadow: 0 16px 38px rgba(56, 43, 25, 0.12);
-  --soft-shadow: 0 10px 24px rgba(56, 43, 25, 0.1);
+  --ink: #17271e;
+  --muted: #657066;
+  --line: rgba(6, 63, 46, 0.16);
+  --shadow: 0 18px 42px rgba(48, 34, 18, 0.14);
+  --soft-shadow: 0 10px 26px rgba(48, 34, 18, 0.1);
   --radius: 8px;
-  --container: min(1120px, calc(100vw - 40px));
+  --container: min(1320px, calc(100vw - 48px));
 }
 
 * {
@@ -28,6 +29,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--cream);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -77,7 +79,7 @@ button {
 }
 
 .announcement {
-  background: var(--leaf-deep);
+  background: linear-gradient(90deg, var(--leaf-deep), var(--leaf));
   color: var(--paper);
   font-size: 0.92rem;
   text-align: center;
@@ -88,15 +90,15 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(251, 246, 235, 0.92);
-  border-bottom: 1px solid var(--line);
+  background: rgba(251, 247, 238, 0.95);
+  border-bottom: 1px solid rgba(6, 63, 46, 0.14);
   backdrop-filter: blur(18px);
 }
 
 .nav-container {
   width: var(--container);
   margin: 0 auto;
-  min-height: 76px;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,45 +108,36 @@ button {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 224px;
+  gap: 14px;
+  min-width: 372px;
 }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--leaf);
-  box-shadow: var(--soft-shadow);
+.brand-logo {
+  width: 188px;
+  flex: 0 0 188px;
+  padding: 4px 0;
 }
 
-.brand-mark::before {
-  width: 24px;
-  height: 16px;
-  content: "";
+.brand-copy {
   display: block;
-  border-radius: 100% 0 100% 0;
-  background: var(--sand);
-  transform: rotate(-24deg);
+  padding-left: 14px;
+  border-left: 1px solid rgba(6, 63, 46, 0.16);
 }
 
 .brand strong {
   display: block;
   color: var(--leaf-deep);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   line-height: 1.1;
   letter-spacing: 0;
 }
 
-.brand span {
+.brand-copy span {
   display: block;
   margin-top: 2px;
   color: var(--earth);
-  font-size: 0.75rem;
+  font-size: 0.84rem;
   line-height: 1.2;
 }
 
@@ -165,7 +158,7 @@ button {
 .nav-links a {
   padding: 10px 12px;
   border-radius: 6px;
-  color: #314133;
+  color: #273f32;
   font-weight: 700;
   font-size: 0.94rem;
 }
@@ -174,7 +167,7 @@ button {
 .nav-links a:focus-visible,
 .nav-links a.active {
   color: var(--leaf-deep);
-  background: rgba(127, 155, 89, 0.14);
+  background: rgba(0, 107, 73, 0.1);
   outline: none;
 }
 
@@ -255,17 +248,19 @@ button {
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(251, 246, 235, 0.96) 0%, rgba(251, 246, 235, 0.86) 42%, rgba(251, 246, 235, 0.2) 74%),
+    linear-gradient(90deg, rgba(255, 253, 248, 0.98) 0%, rgba(255, 253, 248, 0.94) 44%, rgba(255, 253, 248, 0.32) 76%),
     url("../img/hero-botanical.png") center / cover no-repeat;
 }
 
 .hero-inner {
   width: var(--container);
+  min-width: 0;
   margin: 0 auto;
   padding: 72px 0 96px;
 }
 
 .hero-content {
+  min-width: 0;
   max-width: 660px;
 }
 
@@ -310,7 +305,7 @@ p {
 .hero-copy {
   max-width: 570px;
   margin-top: 20px;
-  color: #445142;
+  color: #3d4f43;
   font-size: 1.18rem;
 }
 
@@ -343,18 +338,18 @@ p {
 }
 
 .btn-primary {
-  background: var(--leaf);
+  background: var(--clay);
   color: var(--paper);
-  box-shadow: 0 12px 24px rgba(40, 95, 67, 0.22);
+  box-shadow: 0 12px 24px rgba(240, 120, 24, 0.22);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--leaf-deep);
+  background: #cf5f0e;
 }
 
 .btn-secondary {
-  border-color: rgba(40, 95, 67, 0.26);
+  border-color: rgba(0, 107, 73, 0.24);
   background: rgba(255, 253, 247, 0.86);
   color: var(--leaf-deep);
 }
@@ -386,7 +381,7 @@ p {
   align-items: center;
   gap: 8px;
   padding: 9px 12px;
-  border: 1px solid rgba(40, 95, 67, 0.14);
+  border: 1px solid rgba(0, 107, 73, 0.14);
   border-radius: 6px;
   background: rgba(255, 253, 247, 0.76);
   color: var(--leaf-deep);
@@ -476,7 +471,7 @@ p {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -506,7 +501,7 @@ p {
   place-items: center;
   min-height: 360px;
   padding: 24px;
-  background: linear-gradient(135deg, #f4ead3, #e5d2a8);
+  background: linear-gradient(135deg, #fbf2df, #e9d5ad);
 }
 
 .product-card-media img {
@@ -552,6 +547,10 @@ p {
 
 .product-card .button-row {
   margin-top: 24px;
+}
+
+.combo-card .product-card-media img {
+  width: min(92%, 430px);
 }
 
 .benefit-grid,
@@ -619,6 +618,13 @@ p {
   box-shadow: var(--shadow);
 }
 
+.ingredient-showcase-image {
+  width: 100%;
+  aspect-ratio: 1.08;
+  object-fit: cover;
+  object-position: center;
+}
+
 .check-list,
 .feature-list {
   display: grid;
@@ -633,7 +639,7 @@ p {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #3e4b3f;
+  color: #33483c;
   font-weight: 750;
 }
 
@@ -655,8 +661,8 @@ p {
 }
 
 .comparison-panel.after {
-  border-color: rgba(40, 95, 67, 0.3);
-  background: #eef4df;
+  border-color: rgba(0, 107, 73, 0.28);
+  background: #eef4e5;
 }
 
 .comparison-panel ul {
@@ -715,7 +721,7 @@ p {
 }
 
 .site-footer {
-  background: #172d22;
+  background: #082e22;
   color: rgba(255, 253, 247, 0.82);
   padding: 54px 0 26px;
 }
@@ -730,6 +736,14 @@ p {
 .footer-grid h4 {
   margin: 0 0 14px;
   color: var(--paper);
+}
+
+.footer-logo {
+  width: 190px;
+  margin-bottom: 16px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--paper);
 }
 
 .footer-grid h3 {
@@ -766,7 +780,7 @@ p {
 .subpage-hero,
 .product-page-hero {
   background:
-    linear-gradient(90deg, rgba(251, 246, 235, 0.97), rgba(251, 246, 235, 0.78)),
+    linear-gradient(90deg, rgba(251, 247, 238, 0.97), rgba(251, 247, 238, 0.78)),
     url("../img/ingredients-flatlay.png") center / cover no-repeat;
 }
 
@@ -777,7 +791,7 @@ p {
 .subpage-hero p {
   max-width: 680px;
   margin-top: 18px;
-  color: #455244;
+  color: #3d4f43;
   font-size: 1.14rem;
 }
 
@@ -797,7 +811,7 @@ p {
   place-items: center;
   min-height: 520px;
   border-radius: var(--radius);
-  background: rgba(255, 253, 247, 0.7);
+  background: rgba(255, 253, 247, 0.76);
   box-shadow: var(--shadow);
 }
 
@@ -823,7 +837,7 @@ p {
 
 .product-summary {
   margin-top: 16px;
-  color: #445142;
+  color: #3d4f43;
   font-size: 1.08rem;
 }
 
@@ -941,7 +955,7 @@ p {
 .form-field textarea:focus,
 .form-field select:focus {
   border-color: var(--leaf);
-  outline: 3px solid rgba(40, 95, 67, 0.12);
+  outline: 3px solid rgba(0, 107, 73, 0.12);
 }
 
 .contact-list {
@@ -1149,7 +1163,7 @@ body.cart-open .cart-drawer {
   }
 
   .nav-container {
-    min-height: 68px;
+    min-height: 86px;
   }
 
   .brand {
@@ -1162,7 +1176,7 @@ body.cart-open .cart-drawer {
 
   .site-nav {
     position: absolute;
-    top: 68px;
+    top: 86px;
     right: 20px;
     left: 20px;
     display: none;
@@ -1218,7 +1232,7 @@ body.cart-open .cart-drawer {
   }
 
   h1 {
-    font-size: 2.72rem;
+    font-size: 2.32rem;
   }
 
   h2 {
@@ -1238,10 +1252,15 @@ body.cart-open .cart-drawer {
   }
 
   .brand strong {
-    font-size: 0.98rem;
+    font-size: 1.06rem;
   }
 
-  .brand span {
+  .brand-logo {
+    width: 170px;
+    flex-basis: 170px;
+  }
+
+  .brand-copy {
     display: none;
   }
 
@@ -1253,7 +1272,7 @@ body.cart-open .cart-drawer {
     min-height: 680px;
     align-items: flex-start;
     background:
-      linear-gradient(180deg, rgba(251, 246, 235, 0.96) 0%, rgba(251, 246, 235, 0.9) 48%, rgba(251, 246, 235, 0.42) 100%),
+      linear-gradient(180deg, rgba(251, 247, 238, 0.96) 0%, rgba(251, 247, 238, 0.9) 48%, rgba(251, 247, 238, 0.42) 100%),
       url("../img/hero-botanical.png") 64% bottom / cover no-repeat;
   }
 
@@ -1301,5 +1320,422 @@ body.cart-open .cart-drawer {
   .subpage-hero .container,
   .product-page-hero .container {
     padding: 58px 0 62px;
+  }
+}
+
+/* Premium Ayurveda Boutique refinements */
+body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.86), rgba(255, 250, 242, 0.7)),
+    var(--cream);
+}
+
+.announcement {
+  padding: 10px 16px;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.site-header {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.68), rgba(251, 247, 238, 0.96)),
+    var(--titlebar);
+  box-shadow: 0 10px 30px rgba(39, 28, 15, 0.05);
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.hero {
+  min-height: min(820px, calc(100vh - 40px));
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.99) 0%, rgba(255, 253, 248, 0.96) 42%, rgba(255, 253, 248, 0.36) 100%),
+    url("../img/hero-botanical.png") center / cover no-repeat;
+}
+
+.hero::before {
+  position: absolute;
+  inset: auto 0 0;
+  height: 36%;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0), rgba(250, 243, 232, 0.24));
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+  gap: 40px;
+  align-items: center;
+  padding: 82px 0 92px;
+}
+
+.hero-content {
+  max-width: 690px;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--clay);
+  font-weight: 900;
+}
+
+h1 {
+  max-width: 720px;
+  font-size: 3.6rem;
+}
+
+h2 {
+  max-width: 850px;
+}
+
+.hero-copy {
+  max-width: 600px;
+  font-size: 1.22rem;
+}
+
+.hero-showcase {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 620px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero-duo-image {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 610px);
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0 26px 38px rgba(48, 34, 18, 0.18));
+}
+
+.trust-item,
+.btn,
+.nav-links a,
+.cart-button,
+.menu-toggle,
+.icon-button {
+  border-radius: 999px;
+}
+
+.btn {
+  min-height: 52px;
+  padding: 14px 22px;
+}
+
+.btn-secondary {
+  background: rgba(255, 253, 247, 0.72);
+}
+
+.boutique-proof {
+  border-top: 1px solid rgba(6, 63, 46, 0.1);
+  border-bottom: 1px solid rgba(6, 63, 46, 0.1);
+  background: var(--paper);
+}
+
+.boutique-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.boutique-proof-grid > div {
+  padding: 28px 28px 30px;
+  border-right: 1px solid rgba(6, 63, 46, 0.1);
+}
+
+.boutique-proof-grid > div:last-child {
+  border-right: 0;
+}
+
+.boutique-proof span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--clay);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.boutique-proof strong {
+  display: block;
+  color: var(--leaf-deep);
+  font-size: 1.05rem;
+}
+
+.boutique-proof p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.section {
+  padding: 98px 0;
+}
+
+.section-alt {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 252, 0.72), rgba(255, 249, 241, 0.72)),
+    var(--mist);
+}
+
+.section-intro {
+  margin-bottom: 44px;
+}
+
+.product-grid {
+  gap: 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border-color: rgba(6, 63, 46, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.96), rgba(251, 247, 238, 0.94));
+  box-shadow: 0 18px 46px rgba(48, 34, 18, 0.1);
+}
+
+.product-card-media {
+  min-height: 520px;
+  padding: 30px;
+  background:
+    linear-gradient(145deg, rgba(255, 253, 247, 0.8), rgba(232, 209, 165, 0.5)),
+    radial-gradient(circle at 50% 22%, rgba(216, 167, 66, 0.22), rgba(216, 167, 66, 0));
+}
+
+.product-card-media img {
+  width: min(86%, 330px);
+  max-height: 460px;
+  box-shadow: 0 20px 34px rgba(43, 31, 18, 0.16);
+  filter: none;
+}
+
+.combo-card .product-card-media img {
+  width: min(92%, 430px);
+}
+
+.product-card-body {
+  padding: 34px;
+}
+
+.product-card h3 {
+  font-size: 1.75rem;
+}
+
+.product-card .button-row {
+  gap: 10px;
+}
+
+.benefit-card,
+.reason-card,
+.testimonial,
+.tip-card,
+.faq-card,
+.contact-panel,
+.purchase-panel,
+.story-panel,
+.detail-panel,
+.comparison-panel {
+  border-color: rgba(6, 63, 46, 0.14);
+  background: rgba(255, 253, 247, 0.9);
+  box-shadow: 0 12px 32px rgba(48, 34, 18, 0.08);
+}
+
+.benefit-card,
+.reason-card,
+.tip-card,
+.detail-panel {
+  position: relative;
+}
+
+.benefit-card::after,
+.reason-card::after,
+.tip-card::after,
+.detail-panel::after {
+  position: absolute;
+  top: 0;
+  right: 24px;
+  left: 24px;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, var(--clay), rgba(216, 167, 66, 0));
+}
+
+.benefit-icon,
+.reason-icon {
+  background: rgba(0, 107, 73, 0.1);
+}
+
+.visual-band {
+  gap: 58px;
+}
+
+.visual-band img {
+  border: 8px solid rgba(255, 253, 247, 0.84);
+}
+
+.comparison-panel {
+  padding: 34px;
+}
+
+.testimonial {
+  min-height: 250px;
+}
+
+.rating {
+  width: fit-content;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(216, 167, 66, 0.16);
+}
+
+.section-deep {
+  background:
+    linear-gradient(135deg, rgba(6, 63, 46, 0.96), rgba(0, 107, 73, 0.88)),
+    var(--leaf-deep);
+}
+
+.subpage-hero,
+.product-page-hero {
+  background:
+    linear-gradient(90deg, rgba(251, 247, 238, 0.98), rgba(251, 247, 238, 0.82)),
+    url("../img/ingredients-flatlay.png") center / cover no-repeat;
+}
+
+.product-page-hero .container {
+  padding: 92px 0 100px;
+}
+
+.product-layout {
+  gap: 58px;
+}
+
+.product-media-large {
+  min-height: 620px;
+  border: 1px solid rgba(6, 63, 46, 0.14);
+  background:
+    linear-gradient(145deg, rgba(255, 253, 247, 0.82), rgba(232, 209, 165, 0.5)),
+    radial-gradient(circle at 50% 20%, rgba(216, 167, 66, 0.24), rgba(216, 167, 66, 0));
+}
+
+.product-media-large img {
+  width: min(80%, 460px);
+  max-height: 600px;
+  box-shadow: 0 24px 44px rgba(43, 31, 18, 0.16);
+  filter: none;
+}
+
+.purchase-panel {
+  border-top: 4px solid var(--clay);
+}
+
+.site-footer {
+  background:
+    linear-gradient(135deg, #082e22, #063f2e);
+}
+
+@media (max-width: 980px) {
+  h1 {
+    font-size: 2.9rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 64px 0 70px;
+  }
+
+  .hero-showcase {
+    min-height: 500px;
+  }
+
+  .hero-duo-image {
+    width: min(100%, 560px);
+  }
+
+  .boutique-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .boutique-proof-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(6, 63, 46, 0.1);
+  }
+
+  .boutique-proof-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .product-card-media {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    max-width: min(100%, calc(100vw - 28px));
+    font-size: 2.1rem;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content,
+  .hero-copy,
+  .hero-actions,
+  .trust-strip,
+  .hero-showcase {
+    max-width: min(100%, calc(100vw - 28px));
+  }
+
+  .hero-inner {
+    padding: 48px 0 58px;
+  }
+
+  .hero-showcase {
+    min-height: 390px;
+    overflow: hidden;
+  }
+
+  .hero-duo-image {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .trust-strip {
+    justify-content: flex-start;
+  }
+
+  .trust-item {
+    max-width: 100%;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .product-card-media {
+    min-height: 380px;
+  }
+
+  .product-card-body {
+    padding: 26px;
   }
 }

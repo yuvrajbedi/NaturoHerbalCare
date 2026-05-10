@@ -207,11 +207,9 @@ function buildHero() {
   drawLeaf(canvas, 1378, 148, 120, 38, 0.55, rgba(palette.leafSoft, 0.7));
   drawLeaf(canvas, 1235, 790, 148, 46, -2.2, rgba(palette.leaf, 0.55));
 
-  drawBottle(canvas, 1162, 246, 1.18, "shampoo");
-  drawBottle(canvas, 1340, 178, 1.06, "oil");
-  canvas.ellipse(1308, 470, 22, 22, 0, rgba(palette.red, 0.78));
-  canvas.ellipse(1362, 510, 18, 18, 0, rgba(palette.gold, 0.82));
-  canvas.ellipse(1256, 545, 14, 14, 0, rgba(palette.red, 0.65));
+  canvas.ellipse(1308, 470, 22, 22, 0, rgba(palette.red, 0.24));
+  canvas.ellipse(1362, 510, 18, 18, 0, rgba(palette.gold, 0.28));
+  canvas.ellipse(1256, 545, 14, 14, 0, rgba(palette.red, 0.18));
   return canvas;
 }
 
@@ -315,9 +313,4 @@ writePng(join(imageDir, "shampoo-pack.png"), buildProduct("shampoo"));
 writePng(join(imageDir, "hair-oil-pack.png"), buildProduct("oil"));
 writePng(join(imageDir, "ingredients-flatlay.png"), buildIngredients());
 
-writeFileSync(
-  join(imageDir, "favicon.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#285f43"/><path d="M17 39C24 20 39 13 51 15C48 31 38 42 17 39Z" fill="#eadcbc"/><path d="M19 40C28 33 37 26 49 17" fill="none" stroke="#fffdf7" stroke-width="4" stroke-linecap="round"/><path d="M18 45C27 42 35 41 46 45" fill="none" stroke="#ad7048" stroke-width="4" stroke-linecap="round"/></svg>`,
-);
-
-console.log("Generated local storefront artwork in assets/img");
+console.log("Generated local storefront artwork in assets/img. Run tools/create-favicon.mjs to refresh the Naturo favicon.");

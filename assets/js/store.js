@@ -17,6 +17,14 @@
       image: "assets/img/amazon-hair-oil.jpg",
       amazonUrl: "https://www.amazon.in/gp/product/B0FTVB8CVV",
     },
+    combo: {
+      id: "combo",
+      name: "Hairry Blossom Shampoo + Hair Oil Combo",
+      size: "200 ml + 100 ml",
+      price: 549,
+      image: "assets/img/product-duo.png",
+      amazonUrl: "",
+    },
   };
 
   const readCart = () => {
@@ -113,7 +121,7 @@
       body.innerHTML = `
         <div class="empty-cart">
           <strong>Your cart is ready for something herbal.</strong>
-          <p>Add shampoo, hair oil, or both to begin checkout.</p>
+          <p>Add shampoo, hair oil, or the complete combo to begin checkout.</p>
         </div>
       `;
       checkoutForm?.classList.remove("is-visible");
